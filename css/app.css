@@ -1,0 +1,192 @@
+/* love-cal — page styles (built on css/theme.css) */
+
+.cal-hero {
+  padding-block: clamp(2.5rem, 7vw, 5rem) clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.small-caption {
+  max-width: 44ch;
+  margin: 0.35rem auto 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- calculator shell ---------- */
+
+.calc-shell {
+  max-width: 420px;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  box-shadow: var(--shadow);
+}
+
+.calc-screen {
+  padding: 1rem 1.1rem 0.8rem;
+  border-radius: 14px;
+  background: rgba(8, 10, 28, 0.55);
+  text-align: right;
+  overflow: hidden;
+}
+
+.calc-expression {
+  min-height: 1.2em;
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.calc-result {
+  margin-top: 0.2rem;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  word-break: break-all;
+}
+
+.calc-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.55rem;
+  margin-top: 0.9rem;
+}
+
+.key {
+  padding: 0.9rem 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78));
+  color: #1a1c33;
+  font: inherit;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.08s ease, filter 0.15s ease;
+}
+
+body.light-theme .key {
+  background: linear-gradient(180deg, #ffffff, #f2f2f7);
+  color: #1a1c33;
+}
+
+.key:hover {
+  filter: brightness(0.96);
+}
+
+.key:active {
+  transform: scale(0.95);
+}
+
+.key-fn {
+  background: linear-gradient(180deg, rgba(185, 139, 255, 0.85), rgba(185, 139, 255, 0.6));
+  color: #1a1c33;
+}
+
+.key-op {
+  background: linear-gradient(180deg, rgba(255, 159, 207, 0.9), rgba(255, 159, 207, 0.65));
+  color: #1a1c33;
+}
+
+.key-eq {
+  background: linear-gradient(180deg, rgba(255, 109, 168, 0.95), rgba(255, 109, 168, 0.7));
+  color: #ffffff;
+}
+
+/* ---------- history ---------- */
+
+.calc-history {
+  max-width: 420px;
+  margin-top: 1.4rem;
+}
+
+.history-list {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.history-list li {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  font-size: 0.88rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.history-list li:hover {
+  color: var(--text);
+  border-color: var(--pink);
+}
+
+.history-list .h-expr {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.history-list .h-result {
+  color: var(--pink);
+  font-weight: 600;
+}
+
+/* ---------- us counters ---------- */
+
+.counter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+
+.counter-card {
+  padding: 1.3rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.counter-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.counter-value {
+  margin: 0.4rem 0 0.2rem;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2.2rem;
+  color: var(--pink);
+  line-height: 1.1;
+}
+
+.counter-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.rate-label {
+  margin-right: 0.35rem;
+}
+
+.rate-input {
+  width: 4.2rem;
+  padding: 0.2rem 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.rate-input:focus {
+  outline: none;
+  border-color: var(--pink);
+}
