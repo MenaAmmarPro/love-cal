@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b20">
+  <meta name="description" content="Our Calculator — a white keypad for math, and counters for us.">
+  <title>Our Calculator ✦ Love for Mena</title>
+  <link rel="canonical" href="https://menaammarpro.github.io/love-cal/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Our Calculator — for Mena">
+  <meta property="og:title" content="Our Calculator ✦ Love for Mena">
+  <meta property="og:description" content="A white keypad for math, and counters for us.">
+  <meta property="og:url" content="https://menaammarpro.github.io/love-cal/">
+  <meta property="og:image" content="https://menaammarpro.github.io/love-cal/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Our Calculator — math and us counters">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Calculator ✦ Love for Mena">
+  <meta name="twitter:description" content="A white keypad for math, and counters for us.">
+  <meta name="twitter:image" content="https://menaammarpro.github.io/love-cal/assets/og-image.png">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/theme-main.js" defer></script>
+  <script src="js/effects.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Calculator">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">∑ Our Calculator</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="#calc">Calculator</a>
+      <a href="#us">Us counters</a>
+      <a href="#details">Details</a>
+      <a href="https://menaammarpro.github.io/loveformymena/">Our little universe ↗</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero cal-hero">
+      <p class="eyebrow">A LITTLE MATH, A LOT OF US</p>
+      <div class="moon" aria-hidden="true">∑</div>
+      <p class="small-caption">Numbers for the world, numbers for us.</p>
+      <h1>Our <span>calculator.</span></h1>
+      <p class="hero-description">
+        A proper white keypad for everyday maths &mdash; and a second page of
+        counters that only ever go up: days together, kilometres between two
+        skies, pizza slices, sunrises.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#calc">Do some maths <span>♥</span></a>
+        <a class="button button-ghost" href="#us">Count us</a>
+      </div>
+      <p class="signature">Made with love, just for you <span>♥</span></p>
+    </section>
+
+    <section class="section" id="calc">
+      <p class="eyebrow">THE KEYPAD</p>
+      <h2>Calculator.</h2>
+
+      <div class="calc-shell">
+        <div class="calc-screen" aria-live="polite">
+          <div class="calc-expression" id="calc-expression">&nbsp;</div>
+          <div class="calc-result" id="calc-result">0</div>
+        </div>
+
+        <div class="calc-keys" id="calc-keys">
+          <button class="key key-fn" type="button" data-action="clear">C</button>
+          <button class="key key-fn" type="button" data-action="back">⌫</button>
+          <button class="key key-fn" type="button" data-action="percent">%</button>
+          <button class="key key-op" type="button" data-op="/">÷</button>
+
+          <button class="key" type="button" data-num="7">7</button>
+          <button class="key" type="button" data-num="8">8</button>
+          <button class="key" type="button" data-num="9">9</button>
+          <button class="key key-op" type="button" data-op="*">×</button>
+
+          <button class="key" type="button" data-num="4">4</button>
+          <button class="key" type="button" data-num="5">5</button>
+          <button class="key" type="button" data-num="6">6</button>
+          <button class="key key-op" type="button" data-op="-">−</button>
+
+          <button class="key" type="button" data-num="1">1</button>
+          <button class="key" type="button" data-num="2">2</button>
+          <button class="key" type="button" data-num="3">3</button>
+          <button class="key key-op" type="button" data-op="+">+</button>
+
+          <button class="key key-fn" type="button" data-action="sign">±</button>
+          <button class="key" type="button" data-num="0">0</button>
+          <button class="key" type="button" data-action="dot">.</button>
+          <button class="key key-eq" type="button" data-action="equals">=</button>
+        </div>
+      </div>
+
+      <div class="calc-history" id="calc-history-wrap" hidden>
+        <p class="eyebrow">RECENT</p>
+        <ul class="history-list" id="calc-history"></ul>
+      </div>
+    </section>
+
+    <section class="section" id="us">
+      <p class="eyebrow">NUMBERS THAT ONLY GO UP</p>
+      <h2>Us <span>counters.</span></h2>
+
+      <div class="counter-grid">
+        <div class="counter-card">
+          <p class="counter-label">Days together</p>
+          <p class="counter-value" id="c-days">0</p>
+          <p class="counter-sub" id="c-days-sub">0 hours, 0 minutes</p>
+        </div>
+        <div class="counter-card">
+          <p class="counter-label">Kilometres between two skies</p>
+          <p class="counter-value" id="c-km">4266</p>
+          <p class="counter-sub">Karachi ⇄ Bucharest, as the crow flies</p>
+        </div>
+        <div class="counter-card">
+          <p class="counter-label">Pizza slices, conceptually</p>
+          <p class="counter-value" id="c-pizza">0</p>
+          <p class="counter-sub">
+            <label class="rate-label" for="pizza-rate">per day:</label>
+            <input class="rate-input" id="pizza-rate" type="number" min="0" max="50" step="0.5" value="1" aria-label="Pizza slices per day">
+          </p>
+        </div>
+        <div class="counter-card">
+          <p class="counter-label">Sunrises in different skies</p>
+          <p class="counter-value" id="c-sunrises">0</p>
+          <p class="counter-sub">one for every day, so far</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="details">
+      <p class="eyebrow">JUST FOR US</p>
+      <h2>Details.</h2>
+      <div class="settings-actions">
+        <button class="button button-ghost" id="share-button" type="button">Share this page</button>
+        <button class="button button-ghost" id="clear-history" type="button">Clear calculator history</button>
+      </div>
+      <p class="section-note" id="save-note" aria-live="polite"></p>
+      <p class="settings-note">Saved on this device only — no tracking, no network calls.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with care <span>♥</span> for Mena</p>
+    <p class="footer-small">A little universe of its own ✦</p>
+  </footer>
+</body>
+</html>
